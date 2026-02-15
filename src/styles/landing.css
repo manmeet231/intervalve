@@ -1,0 +1,43 @@
+.main {
+  overflow: auto;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: aliceblue;
+  font-size: larger;
+}
+
+.nav {
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  background-color: black;
+}
+h1 {
+  margin: 0;
+}
+
+h3 {
+  margin-top: -40px;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}

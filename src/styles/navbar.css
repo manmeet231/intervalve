@@ -1,0 +1,8 @@
+.navbar {
+  position: relative;
+  background-color: transparent;
+  padding: 1rem 2rem;
+  z-index: 1;
+  top: 0;
+  bottom: 10px;
+}
