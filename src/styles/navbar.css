@@ -1,8 +1,34 @@
 .navbar {
   position: relative;
+  display: flex;
+  align-items: center;
   background-color: transparent;
-  padding: 1rem 2rem;
+  padding: 6px;
+  border-radius: 999px;
+}
+
+.pill {
+  position: relative;
+  padding: 8px 18px;
+  border: none;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  border-radius: 999px;
   z-index: 1;
-  top: 0;
-  bottom: 10px;
+}
+
+.highlight {
+  position: absolute;
+  top: 10;
+  left: 0;
+  height: 50%;
+  background: white;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+  z-index: 0;
+}
+
+.pill.active {
+  color: black;
 }

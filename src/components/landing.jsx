@@ -1,7 +1,7 @@
 import React,{useRef} from "react";
 import "../styles/landing.css"
 import BlurText from "../importedcomponents/BlurText";
-import Aurora from "../importedcomponents/Aurora"
+import PixelBlast from '../importedcomponents/PixelBlast';
 import Navbar from "./navbar";
 
 function Landing(){
@@ -10,11 +10,24 @@ function Landing(){
         <>
         <div className="main">
             <div className="background">
-                <Aurora
-                    colorStops={['18337e', '#00e8fc', '#7a297a']}
-                    blend={0.5}
-                    amplitude={1.0}
-                    speed={1}
+                <PixelBlast
+                    variant="square"
+                    pixelSize={4}
+                    color="rgb(35, 39, 114)"
+                    patternScale={2}
+                    patternDensity={1}
+                    pixelSizeJitter={0}
+                    enableRipples
+                    rippleSpeed={0.4}
+                    rippleThickness={0.12}
+                    rippleIntensityScale={1.5}
+                    liquid={false}
+                    liquidStrength={0.12}
+                    liquidRadius={1.2}
+                    liquidWobbleSpeed={5}
+                    speed={0.5}
+                    edgeFade={0.25}
+                    transparent
                 />
             </div>               
 

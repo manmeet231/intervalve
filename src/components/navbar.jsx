@@ -1,26 +1,37 @@
-import React from "react";
+import { useState , useRef,  useLayoutEffect } from "react";
 import "../styles/navbar.css"
-import GooeyNav from "../importedcomponents/GooeyNav"
+
+
 function Navbar() {
-    const items = [
-    { label: "Home", href: "#" },
-    { label: "About", href: "#" },
-    { label: "Contact", href: "#" },
-    ];
-  
-    return (
-    <div className="navbar">
-        <GooeyNav
-        items={items}
-        particleCount={15}
-        particleDistances={[90, 10]}
-        particleR={100}
-        initialActiveIndex={0}
-        animationTime={600}
-        timeVariance={300}
-        colors={[1, 2, 3, 1, 2, 3, 1, 4]}
-        />
-    </div>
+  const [activeIndex,setActiveIndex] = useState(0);
+  const highlightRef = useRef(null);
+  const buttonRefs = useRef([]);
+  const items = ["Home","features", "contact", "demo"]
+
+  useLayoutEffect(()=>{
+    const activeButton = buttonRefs.current[activeIndex];
+    const highlight = highlightRef.current;
+
+    if (!activeButton || !highlight) return;
+
+    highlight.style.width = `${activeButton.offsetWidth}px`;
+    highlight.style.transform = `translateX(${activeButton.offsetLeft}px)`;
+  }, [activeIndex]);
+
+  return (
+      <div className="navbar">
+        <div className="highlight" ref = {highlightRef}></div>
+        {items.map((item,index)=> (
+          <button
+            key={item}
+            ref={(el)=>(buttonRefs.current[index] = el)}
+            className={`pill ${activeIndex === index ? "active":""}`}
+            onClick={()=>setActiveIndex(index)}
+          >
+          {item}
+          </button>
+        ))}
+      </div>
   );
 }
 
