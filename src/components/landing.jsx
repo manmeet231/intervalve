@@ -3,9 +3,9 @@ import "../styles/landing.css"
 import BlurText from "../importedcomponents/BlurText";
 import PixelBlast from '../importedcomponents/PixelBlast';
 import Navbar from "./navbar";
+import Features from "./features";
 
 function Landing(){
-    const Features = useRef(null);
     return(
         <>
         <div className="main">
@@ -51,6 +51,9 @@ function Landing(){
             </div>
             <div className="nav">
                 <Navbar/>
+            </div>
+            <div className="features">
+                <Features/>
             </div>
         </>
     )
